@@ -16,7 +16,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping(value = "/salvar")
-    public ModelPayment salvaPayment(@RequestBody ModelPayment modelPayment){
+    public ModelPayment saPayment(@RequestBody ModelPayment modelPayment){
         return paymentService.salvaPayment(modelPayment);
     }
 

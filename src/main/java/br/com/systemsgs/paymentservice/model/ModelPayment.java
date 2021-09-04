@@ -15,9 +15,11 @@ import java.io.Serializable;
 public class ModelPayment implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long paymentId;
     private String paymentStatus;
     private String transactionId;
+    private int orderId;
+    private double amount;
 
 }

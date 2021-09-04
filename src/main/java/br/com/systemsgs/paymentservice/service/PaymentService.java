@@ -15,8 +15,13 @@ public class PaymentService {
     private PaymentRepository paymentRepository;
 
     public ModelPayment salvaPayment(ModelPayment modelPayment){
+        modelPayment.setPaymentStatus(processingPayment());
         modelPayment.setTransactionId(UUID.randomUUID().toString());
         return paymentRepository.save(modelPayment);
+    }
+
+    public String processingPayment(){
+        return new Random().nextBoolean()? "success" : "false";
     }
 
 }
